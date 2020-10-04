@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "wall_WolfStoneMoss",
-    "path": "sprites/wall_WolfStoneMoss/wall_WolfStoneMoss.yy",
+    "name": "wall_WolfBlue",
+    "path": "sprites/wall_WolfBlue/wall_WolfBlue.yy",
   },
   "solid": true,
   "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Wall",
+    "path": "objects/Wall/Wall.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -28,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Wall",
+  "name": "Wall3",
   "tags": [],
   "resourceType": "GMObject",
 }

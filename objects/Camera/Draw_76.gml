@@ -5,9 +5,12 @@ lowest =
 {
 	distance : 0,
 	column : 0,
-	sprite_id : 0,
-	aaa : "",
+	sprite_id : 0
 }
+
+x = Player.x;
+y = Player.y;
+angle = Player.facing_angle;
 
 #region function declaration
 function intersect_vertical(x_test,line)
@@ -33,7 +36,7 @@ function update_if_lower_distance(test_x,test_y,test_sprite_index,vert_edge)
 	if(test_angle < 90 && test_angle > -90)
 	{		
 		var test_dist = sqrt(sqr(test_x - Camera.x)+sqr(test_y - Camera.y)); 
-		if(test_dist < Camera.lowest.distance)
+		if(test_dist < Camera.lowest.distance && test_dist > Camera.drawMin)
 		{
 			Camera.lowest.distance = test_dist;
 			Camera.lowest.sprite_id = test_sprite_index;

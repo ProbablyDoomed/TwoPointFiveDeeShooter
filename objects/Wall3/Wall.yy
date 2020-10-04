@@ -3,7 +3,7 @@
     "name": "wall_WolfStoneMoss",
     "path": "sprites/wall_WolfStoneMoss/wall_WolfStoneMoss.yy",
   },
-  "solid": true,
+  "solid": false,
   "visible": false,
   "spriteMaskId": null,
   "persistent": false,

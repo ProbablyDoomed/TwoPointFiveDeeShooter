@@ -1,7 +1,12 @@
 ///@description Draw slices	
 
-//draw_sprite(wall_WolfBrick,0,0,0);
+var ceiling_colour_far = c_black
+var ceiling_colour_near = c_gray;
+var floor_colour_far = c_black;
+var floor_colour_near = c_dkgray;
 
+draw_rectangle_color(0,0,WIDTH*SCALE,HEIGHT*SCALE/2,ceiling_colour_near,ceiling_colour_near,ceiling_colour_far,ceiling_colour_far,false)
+draw_rectangle_color(0,HEIGHT*SCALE/2,WIDTH*SCALE,HEIGHT*SCALE,floor_colour_far,floor_colour_far,floor_colour_near,floor_colour_near,false)
 
 for (var c = 0; c < ds_list_size(wall_slices_sorted); c+=1) 
 {
@@ -22,8 +27,8 @@ for (var c = 0; c < ds_list_size(wall_slices_sorted); c+=1)
 		1, pixel_height,
 		slice.scr_x * SCALE, draw_y * SCALE,
 		SCALE, scale_y * SCALE,
-		c_white, 1);
+		c_white, (draw_height/HEIGHT));
 }
 
-draw_rectangle(0, 0, WIDTH*SCALE, HEIGHT*SCALE, true);
-draw_text_transformed_color(WIDTH*SCALE/2, HEIGHT*SCALE/2, string(Camera.angle),2,2,0,c_red,c_red,c_red,c_red,1);
+//draw_rectangle(0, 0, WIDTH*SCALE, HEIGHT*SCALE, true);
+//draw_text_transformed_color(WIDTH*SCALE/2, HEIGHT*SCALE/2, string(Camera.angle),2,2,0,c_red,c_red,c_red,c_red,1);
