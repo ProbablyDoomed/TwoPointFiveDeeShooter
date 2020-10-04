@@ -1,16 +1,13 @@
 {
   "spriteId": {
-    "name": "wall_WolfBlue",
-    "path": "sprites/wall_WolfBlue/wall_WolfBlue.yy",
+    "name": "env_WolfBarrel",
+    "path": "sprites/env_WolfBarrel/env_WolfBarrel.yy",
   },
   "solid": true,
   "visible": false,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "Wall",
-    "path": "objects/Wall/Wall.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,14 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [],
-  "properties": [],
+  "properties": [
+    {"varType":3,"value":"False","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"drawn_this_frame","tags":[],"resourceType":"GMObjectProperty",},
+  ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "World_objects",
+    "path": "folders/Objects/World_objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Wall3",
+  "name": "AbstractThing",
   "tags": [],
   "resourceType": "GMObject",
 }

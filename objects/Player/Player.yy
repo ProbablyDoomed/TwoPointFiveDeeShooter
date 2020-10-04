@@ -6,7 +6,7 @@
   "solid": true,
   "visible": false,
   "spriteMaskId": null,
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -22,6 +22,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"Player","path":"objects/Player/Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"AbstractWall","path":"objects/AbstractWall/AbstractWall.yy",},"parent":{"name":"Player","path":"objects/Player/Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
     {"varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"facing_angle","tags":[],"resourceType":"GMObjectProperty",},
@@ -33,8 +34,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "World_objects",
+    "path": "folders/Objects/World_objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "Player",

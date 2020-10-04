@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "wall_WolfStoneMoss",
-    "path": "sprites/wall_WolfStoneMoss/wall_WolfStoneMoss.yy",
+    "name": "env_WolfBarrel",
+    "path": "sprites/env_WolfBarrel/env_WolfBarrel.yy",
   },
   "solid": true,
   "visible": false,
@@ -21,14 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [],
-  "properties": [],
+  "properties": [
+    {"varType":3,"value":"False","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"drawn_this_frame","tags":[],"resourceType":"GMObjectProperty",},
+  ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "World_objects",
+    "path": "folders/Objects/World_objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Wall",
+  "name": "AbstractThing",
   "tags": [],
   "resourceType": "GMObject",
 }
