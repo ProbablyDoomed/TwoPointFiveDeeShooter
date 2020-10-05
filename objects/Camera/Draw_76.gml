@@ -82,9 +82,7 @@ for(var ray = 0; ray < WIDTH; ray++)
 		c : 0,
 	}
 	ray_line.c = y - (ray_line.m*x);
-	
-	//show_debug_message("ray_angle: "+string(ray_angle-angle));	
-	
+		
 	lowest.distance = drawMax;
 	with(AbstractWall)
 	{
@@ -114,7 +112,9 @@ for(var ray = 0; ray < WIDTH; ray++)
 		dist : lowest.distance,
 		col : lowest.column,
 		spr_id : lowest.sprite_id,
-		scr_x : ray
+		scr_x : ray,
+		rotation : 0,
+		off : 0
 	}
 	
 	if(wall_slice.dist < drawMax 
@@ -135,7 +135,9 @@ with(AbstractThing)
 		dist : thing_dist,
 		col : -1,
 		spr_id : sprite_index,
-		scr_x : (thing_angle + Camera.fov) * Camera.WIDTH / (Camera.fov*2)
+		scr_x : (thing_angle + Camera.fov) * Camera.WIDTH / (Camera.fov*2),
+		rot : sprite_rotation,
+		off : sprite_vert_offset
 	}
 
 	if(thing3d.dist < Camera.drawMax 
@@ -144,14 +146,7 @@ with(AbstractThing)
 		ds_priority_add(Camera.drawable_3d_q, thing3d, thing3d.dist);
 	}
 }
-/*
-var lim = ds_priority_size(drawable_3d_q);
-ds_list_clear(drawable_3d_sorted);
-for (var i = 0; i < lim; i += 1) 
-{
-	ds_list_insert(drawable_3d_sorted,i,ds_priority_delete_max(drawable_3d_q));
-}
-*/
+
 
 
 

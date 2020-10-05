@@ -7,6 +7,8 @@
     {"id":{"name":"wall_WolfBlue","path":"sprites/wall_WolfBlue/wall_WolfBlue.yy",},"order":3,},
     {"id":{"name":"wall_WolfStone","path":"sprites/wall_WolfStone/wall_WolfStone.yy",},"order":1,},
     {"id":{"name":"env_WolfBarrel","path":"sprites/env_WolfBarrel/env_WolfBarrel.yy",},"order":0,},
+    {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},"order":15,},
+    {"id":{"name":"AbstractProjectile","path":"objects/AbstractProjectile/AbstractProjectile.yy",},"order":1,},
     {"id":{"name":"collide_round","path":"sprites/collide_round/collide_round.yy",},"order":0,},
     {"id":{"name":"HUD_UI","path":"objects/HUD_UI/HUD_UI.yy",},"order":1,},
     {"id":{"name":"WolfBlueWall","path":"objects/WolfBlueWall/WolfBlueWall.yy",},"order":2,},

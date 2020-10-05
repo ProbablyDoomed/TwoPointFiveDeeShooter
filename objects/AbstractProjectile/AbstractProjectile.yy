@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "AbstractProjectile",
-    "path": "objects/AbstractProjectile/AbstractProjectile.yy",
+    "name": "AbstractThing",
+    "path": "objects/AbstractThing/AbstractThing.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,7 +23,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"AbstractWall","path":"objects/AbstractWall/AbstractWall.yy",},"parent":{"name":"AbstractProjectile","path":"objects/AbstractProjectile/AbstractProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"sprite_vert_offset","path":"objects/AbstractThing/AbstractThing.yy",},"objectId":{"name":"AbstractThing","path":"objects/AbstractThing/AbstractThing.yy",},"value":"8","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
@@ -33,7 +35,7 @@
     "path": "folders/Objects/World_objects/Projectiles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "EldritchBlast",
+  "name": "AbstractProjectile",
   "tags": [],
   "resourceType": "GMObject",
 }
