@@ -8,9 +8,9 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 0,
+  "bbox_right": 63,
   "bbox_top": 0,
-  "bbox_bottom": 0,
+  "bbox_bottom": 63,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"48ec4dc1-31c6-4bed-83cc-a52258c2f4df","path":"sprites/Sprite8/Sprite8.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"48ec4dc1-31c6-4bed-83cc-a52258c2f4df","path":"sprites/Sprite8/Sprite8.yy",},"LayerId":{"name":"0c0c133b-8f59-4d21-a82f-057dbdf78d07","path":"sprites/Sprite8/Sprite8.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},"resourceVersion":"1.0","name":"48ec4dc1-31c6-4bed-83cc-a52258c2f4df","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ded15b5e-528f-4a67-9109-c4ed1b330424","path":"sprites/wall_WhiteBrick/wall_WhiteBrick.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ded15b5e-528f-4a67-9109-c4ed1b330424","path":"sprites/wall_WhiteBrick/wall_WhiteBrick.yy",},"LayerId":{"name":"afd7b0fd-3fe0-4658-b14b-62592007e6e9","path":"sprites/wall_WhiteBrick/wall_WhiteBrick.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"wall_WhiteBrick","path":"sprites/wall_WhiteBrick/wall_WhiteBrick.yy",},"resourceVersion":"1.0","name":"ded15b5e-528f-4a67-9109-c4ed1b330424","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},
+    "spriteId": {"name":"wall_WhiteBrick","path":"sprites/wall_WhiteBrick/wall_WhiteBrick.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"1f7e8422-efcc-40cb-96de-95d4874a9202","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"48ec4dc1-31c6-4bed-83cc-a52258c2f4df","path":"sprites/Sprite8/Sprite8.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"32d39125-2644-498d-9106-d9d584dbfb69","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ded15b5e-528f-4a67-9109-c4ed1b330424","path":"sprites/wall_WhiteBrick/wall_WhiteBrick.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},
+    "parent": {"name":"wall_WhiteBrick","path":"sprites/wall_WhiteBrick/wall_WhiteBrick.yy",},
     "resourceVersion": "1.3",
-    "name": "Sprite8",
+    "name": "wall_WhiteBrick",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0c0c133b-8f59-4d21-a82f-057dbdf78d07","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"afd7b0fd-3fe0-4658-b14b-62592007e6e9","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "TwoPointFiveDeeShooter",
-    "path": "TwoPointFiveDeeShooter.yyp",
+    "name": "walls",
+    "path": "folders/Sprites/walls.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Sprite8",
+  "name": "wall_WhiteBrick",
   "tags": [],
   "resourceType": "GMSprite",
 }

@@ -3,7 +3,7 @@
     "name": "Psych",
     "path": "sprites/Psych/Psych.yy",
   },
-  "solid": true,
+  "solid": false,
   "visible": false,
   "spriteMaskId": null,
   "persistent": false,

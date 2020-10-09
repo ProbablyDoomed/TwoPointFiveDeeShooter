@@ -3,7 +3,7 @@
     "name": "collide_round",
     "path": "sprites/collide_round/collide_round.yy",
   },
-  "solid": true,
+  "solid": false,
   "visible": false,
   "spriteMaskId": null,
   "persistent": true,

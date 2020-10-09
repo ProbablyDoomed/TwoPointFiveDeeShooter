@@ -23,10 +23,15 @@ function intersect_horizontal(y_test,line)
 	return (y_test - line.c) / line.m;
 }
 
-function calculate_angle(angle_x,angle_y)
+function intersect_line_segment()
 {
-	var result_angle = darctan((angle_y - Camera.y)/(angle_x - Camera.x)) - Camera.angle;	
-	if(angle_x < Camera.x) result_angle += 180;
+
+}
+
+function calculate_angle(a_x,a_y)
+{
+	var result_angle = darctan((a_y - Camera.y)/(a_x - Camera.x)) - Camera.angle;	
+	if(a_x < Camera.x) result_angle += 180;
 	if(result_angle >= 180) result_angle -= 360;
 	if(result_angle <= -180) result_angle += 360;	
 	return result_angle;
@@ -86,6 +91,7 @@ for(var ray = 0; ray < WIDTH; ray++)
 	lowest.distance = drawMax;
 	with(AbstractWall)
 	{
+		
 		var top_edge_y = y, bottom_edge_y = y + sprite_height;
 		var left_edge_x = x, right_edge_x = x + sprite_width;
 		

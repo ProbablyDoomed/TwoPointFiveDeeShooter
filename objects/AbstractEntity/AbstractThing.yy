@@ -3,7 +3,7 @@
     "name": "env_WolfBarrel",
     "path": "sprites/env_WolfBarrel/env_WolfBarrel.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": false,
   "spriteMaskId": null,
   "persistent": false,
