@@ -5,9 +5,12 @@ lowest =
 {
 	distance : 0,
 	column : 0,
-	sprite_id : 0,
-	aaa : "",
+	sprite_id : 0
 }
+
+x = Player.x;
+y = Player.y;
+angle = Player.facing_angle;
 
 #region function declaration
 function intersect_vertical(x_test,line)
@@ -20,35 +23,58 @@ function intersect_horizontal(y_test,line)
 	return (y_test - line.c) / line.m;
 }
 
+function intersect_line_segment()
+{
+
+}
+
+function calculate_angle(a_x,a_y)
+{
+	var result_angle = darctan((a_y - Camera.y)/(a_x - Camera.x)) - Camera.angle;	
+	if(a_x < Camera.x) result_angle += 180;
+	if(result_angle >= 180) result_angle -= 360;
+	if(result_angle <= -180) result_angle += 360;	
+	return result_angle;
+}
+
+function calculate_distance(target_x,target_y,target_angle)
+{
+	var target_dist = Camera.drawMax;	
+	if(target_angle < 90 && target_angle > -90)
+	{		
+		target_dist = sqrt(sqr(target_x - Camera.x)+sqr(target_y - Camera.y)); 
+	}
+	
+	return target_dist;
+}
+
 function update_if_lower_distance(test_x,test_y,test_sprite_index,vert_edge)
 {
-	var test_angle = darctan((test_y - Camera.y)/(test_x - Camera.x)) - Camera.angle;		
+	var test_dist = Camera.calculate_distance(test_x,test_y, 
+		Camera.calculate_angle(test_x,test_y));
 	
-	if(test_x < Camera.x) test_angle += 180;
-	if(test_angle >= 180) test_angle -= 360;
-	if(test_angle <= -180) test_angle += 360;	
-	
-	//test_angle = bound_angle(test_angle);	
-	
-	if(test_angle < 90 && test_angle > -90)
-	{		
-		var test_dist = sqrt(sqr(test_x - Camera.x)+sqr(test_y - Camera.y)); 
-		if(test_dist < Camera.lowest.distance)
+	if(test_dist < Camera.lowest.distance 
+		&& test_dist > Camera.drawMin 
+		&& test_dist < Camera.drawMax)
+	{
+		Camera.lowest.distance = test_dist;
+		Camera.lowest.sprite_id = test_sprite_index;
+		if(vert_edge)
 		{
-			Camera.lowest.distance = test_dist;
-			Camera.lowest.sprite_id = test_sprite_index;
-			if(vert_edge)
-			{
-				Camera.lowest.column = test_y % sprite_get_width(test_sprite_index);
-			}
-			else
-			{
-				Camera.lowest.column = test_x % sprite_get_width(test_sprite_index);
-			}
+			Camera.lowest.column = test_y % sprite_get_width(test_sprite_index);
+		}
+		else
+		{
+			Camera.lowest.column = test_x % sprite_get_width(test_sprite_index);
 		}
 	}
 }
+
+
+
 #endregion
+
+
 
 for(var ray = 0; ray < WIDTH; ray++)
 {
@@ -61,12 +87,11 @@ for(var ray = 0; ray < WIDTH; ray++)
 		c : 0,
 	}
 	ray_line.c = y - (ray_line.m*x);
-	
-	//show_debug_message("ray_angle: "+string(ray_angle-angle));	
-	
+		
 	lowest.distance = drawMax;
-	with(Wall)
+	with(AbstractWall)
 	{
+		
 		var top_edge_y = y, bottom_edge_y = y + sprite_height;
 		var left_edge_x = x, right_edge_x = x + sprite_width;
 		
@@ -88,28 +113,46 @@ for(var ray = 0; ray < WIDTH; ray++)
 			update_if_lower_distance(right_edge_x,right_intersect_y,sprite_index,true);
 	}
 	
-	var new_slice = 
+	var wall_slice = 
 	{
 		dist : lowest.distance,
 		col : lowest.column,
 		spr_id : lowest.sprite_id,
-		scr_x : ray
+		scr_x : ray,
+		rotation : 0,
+		off : 0
 	}
 	
-	if(new_slice.dist < drawMax && new_slice.dist > drawMin)
+	if(wall_slice.dist < drawMax 
+		&& wall_slice.dist > drawMin)
 	{
-		ds_priority_add(wall_slices_q, new_slice, new_slice.dist);
+		ds_priority_add(drawable_3d_q, wall_slice, wall_slice.dist);
 	}		
+	
 }
 
-var lim = ds_priority_size(wall_slices_q);
-ds_list_clear(wall_slices_sorted);
-for (var i = 0; i < lim; i += 1) 
-{
-	ds_list_insert(wall_slices_sorted,i,ds_priority_delete_min(wall_slices_q));
+with(AbstractThing)
+{		
+	var thing_angle = Camera.calculate_angle(x,y);
+	var thing_dist = Camera.calculate_distance(x,y,thing_angle);			
+
+	var thing3d = 
+	{
+		dist : thing_dist,
+		col : -1,
+		spr_id : sprite_index,
+		scr_x : (thing_angle + Camera.fov) * Camera.WIDTH / (Camera.fov*2),
+		rot : sprite_rotation,
+		off : sprite_vert_offset
+	}
+
+	if(thing3d.dist < Camera.drawMax 
+		&& thing3d.dist > Camera.drawMin)
+	{
+		ds_priority_add(Camera.drawable_3d_q, thing3d, thing3d.dist);
+	}
 }
 
-ds_priority_clear(wall_slices_q);
 
 
 
