@@ -3,7 +3,7 @@
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
@@ -17,7 +17,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":64,"eventType":8,"collisionObjectId":null,"parent":{"name":"HUD_UI","path":"objects/HUD_UI/HUD_UI.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

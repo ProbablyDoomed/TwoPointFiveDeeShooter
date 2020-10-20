@@ -23,11 +23,6 @@ function intersect_horizontal(y_test,line)
 	return (y_test - line.c) / line.m;
 }
 
-function intersect_line_segment()
-{
-
-}
-
 function calculate_angle(a_x,a_y)
 {
 	var result_angle = darctan((a_y - Camera.y)/(a_x - Camera.x)) - Camera.angle;	
