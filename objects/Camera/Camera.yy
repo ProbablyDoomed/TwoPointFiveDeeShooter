@@ -24,7 +24,7 @@
   ],
   "properties": [
     {"varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"angle","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":0,"value":"32","rangeEnabled":true,"rangeMin":1.0,"rangeMax":89.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"fov","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"24","rangeEnabled":true,"rangeMin":1.0,"rangeMax":89.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"fov","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"2048","rangeEnabled":false,"rangeMin":0.0,"rangeMax":512.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"drawMax","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"8","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"drawMin","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":6,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"drawable_3d_sorted","tags":[],"resourceType":"GMObjectProperty",},

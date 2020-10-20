@@ -30,7 +30,7 @@ for (var i = 0; i < lim; i += 1)
 	
 	if(drawable_3d.col == -1)
 	{
-		if(draw_height < HEIGHT*3)
+		if(draw_height < HEIGHT*4)
 		{
 			var draw_y = (HEIGHT + (64*scale_sprite) - draw_height) / 2;		
 		

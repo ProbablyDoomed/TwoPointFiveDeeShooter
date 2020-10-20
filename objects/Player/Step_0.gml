@@ -43,7 +43,19 @@ if		(walk =  1)		{v_x += v_acc*cos_face; v_y += v_acc*sin_face;}
 else if (walk = -1)		{v_x -= v_acc*cos_face; v_y -= v_acc*sin_face;}
 
 
-x += v_x; y += v_y;
+function valid_position(x_collide,y_collide)
+{
+	var collide = place_meeting(x_collide, y_collide, AbstractWall) 
+	|| place_meeting(x_collide, y_collide, AbstractTangible) 
+	|| place_meeting(x_collide, y_collide, AbstractEntity);
+	
+	return !collide;
+}
+
+
+if		(valid_position(x + v_x,	y + v_y	))	{ x += v_x;		y += v_y;	}
+else if	(valid_position(x + v_x,	y		))	{ x += v_x;					}
+else if	(valid_position(x,			y + v_y	))	{ y += v_y;					}
 
 facing_angle = bound_angle(facing_angle);
 
