@@ -25,8 +25,17 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"AbstractWall","path":"objects/AbstractWall/AbstractWall.yy",},"parent":{"name":"AbstractProjectile","path":"objects/AbstractProjectile/AbstractProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"AbstractProjectile","path":"objects/AbstractProjectile/AbstractProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"AbstractTangible","path":"objects/AbstractTangible/AbstractTangible.yy",},"parent":{"name":"AbstractProjectile","path":"objects/AbstractProjectile/AbstractProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"AbstractEntity","path":"objects/AbstractEntity/AbstractEntity.yy",},"parent":{"name":"AbstractProjectile","path":"objects/AbstractProjectile/AbstractProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"parent":{"name":"AbstractProjectile","path":"objects/AbstractProjectile/AbstractProjectile.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
-  "properties": [],
+  "properties": [
+    {"varType":3,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"hitscan","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"400000","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"lifetime","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":2,"value":"noone","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"variable_name","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"0.05","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"hitscan_step","tags":[],"resourceType":"GMObjectProperty",},
+  ],
   "overriddenProperties": [
     {"propertyId":{"name":"sprite_vert_offset","path":"objects/AbstractThing/AbstractThing.yy",},"objectId":{"name":"AbstractThing","path":"objects/AbstractThing/AbstractThing.yy",},"value":"8","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],

@@ -35,39 +35,11 @@ m_x = display_mouse_get_x();
 v_x *= v_fric; v_y *= v_fric;
 if		(strafe == -1)	{v_x += v_acc*dcos(facing_angle-90); v_y += v_acc*dsin(facing_angle-90);}
 else if (strafe ==  1)	{v_x += v_acc*dcos(facing_angle+90); v_y += v_acc*dsin(facing_angle+90);}
+if		(walk =  1)		{v_x += v_acc*dcos(facing_angle); v_y += v_acc*dsin(facing_angle);}
+else if (walk = -1)		{v_x -= v_acc*dcos(facing_angle); v_y -= v_acc*dsin(facing_angle);}
 
-var cos_face = dcos(facing_angle);
-var sin_face = dsin(facing_angle);
-
-if		(walk =  1)		{v_x += v_acc*cos_face; v_y += v_acc*sin_face;}
-else if (walk = -1)		{v_x -= v_acc*cos_face; v_y -= v_acc*sin_face;}
-
-
-function valid_position(x_collide,y_collide)
-{
-	var collide = place_meeting(x_collide, y_collide, AbstractWall) 
-	|| place_meeting(x_collide, y_collide, AbstractTangible) 
-	|| place_meeting(x_collide, y_collide, AbstractEntity);
-	
-	return !collide;
-}
-
-
-if		(valid_position(x + v_x,	y + v_y	))	{ x += v_x;		y += v_y;	}
-else if	(valid_position(x + v_x,	y		))	{ x += v_x;					}
-else if	(valid_position(x,			y + v_y	))	{ y += v_y;					}
+if		(valid_position(x + v_x, y + v_y ))	{ x += v_x;	y += v_y; }
+else if	(valid_position(x + v_x, y		 ))	{ x += v_x;           }
+else if	(valid_position(x,       y + v_y ))	{           y += v_y; }
 
 facing_angle = bound_angle(facing_angle);
-
-if (keyboard_check_pressed(vk_control) || mouse_check_button_pressed(mb_left)) 
-{
-	var inst = instance_create_depth(x, y, 0, AbstractProjectile);
-	with (inst)
-	{
-		speed = 48  + random_range(-0,2);
-		direction = 360 - other.facing_angle + random_range(-1,1);
-		sprite_rotation = random_range(0,360);
-	}
-
-}
-

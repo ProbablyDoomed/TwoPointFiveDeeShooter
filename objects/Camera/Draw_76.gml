@@ -25,17 +25,19 @@ function intersect_horizontal(y_test,line)
 
 function calculate_angle(a_x,a_y)
 {
-	var result_angle = darctan((a_y - Camera.y)/(a_x - Camera.x)) - Camera.angle;	
+	var result_angle = darctan((a_y - Camera.y)/(a_x - Camera.x)) - Camera.angle;
+	
 	if(a_x < Camera.x) result_angle += 180;
 	if(result_angle >= 180) result_angle -= 360;
 	if(result_angle <= -180) result_angle += 360;	
+	
 	return result_angle;
 }
 
 function calculate_distance(target_x,target_y,target_angle)
 {
 	var target_dist = Camera.drawMax;	
-	if(target_angle < 90 && target_angle > -90)
+	if(target_angle <= 90 && target_angle >= -90)
 	{		
 		target_dist = sqrt(sqr(target_x - Camera.x)+sqr(target_y - Camera.y)); 
 	}
@@ -128,23 +130,26 @@ for(var ray = 0; ray < WIDTH; ray++)
 
 with(AbstractThing)
 {		
-	var thing_angle = Camera.calculate_angle(x,y);
-	var thing_dist = Camera.calculate_distance(x,y,thing_angle);			
-
-	var thing3d = 
+	if(sprite_index != -1)
 	{
-		dist : thing_dist,
-		col : -1,
-		spr_id : sprite_index,
-		scr_x : (thing_angle + Camera.fov) * Camera.WIDTH / (Camera.fov*2),
-		rot : sprite_rotation,
-		off : sprite_vert_offset
-	}
+		var thing_angle = Camera.calculate_angle(x,y);
+		var thing_dist = Camera.calculate_distance(x,y,thing_angle);			
 
-	if(thing3d.dist < Camera.drawMax 
-		&& thing3d.dist > Camera.drawMin)
-	{
-		ds_priority_add(Camera.drawable_3d_q, thing3d, thing3d.dist);
+		var thing3d = 
+		{
+			dist : thing_dist,
+			col : -1,
+			spr_id : sprite_index,
+			scr_x : (thing_angle + Camera.fov) * Camera.WIDTH / (Camera.fov*2),
+			rot : sprite_rotation,
+			off : sprite_vert_offset
+		}
+
+		if(thing3d.dist < Camera.drawMax 
+			&& thing3d.dist > Camera.drawMin)
+		{
+			ds_priority_add(Camera.drawable_3d_q, thing3d, thing3d.dist);
+		}
 	}
 }
 

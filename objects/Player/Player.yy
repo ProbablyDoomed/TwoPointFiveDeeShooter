@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "collide_round",
-    "path": "sprites/collide_round/collide_round.yy",
+    "name": "collide_round_64",
+    "path": "sprites/collide_round_64/collide_round_64.yy",
   },
   "solid": false,
   "visible": false,
@@ -24,6 +24,8 @@
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"Player","path":"objects/Player/Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"AbstractWall","path":"objects/AbstractWall/AbstractWall.yy",},"parent":{"name":"Player","path":"objects/Player/Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"Player","path":"objects/Player/Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":53,"eventType":6,"collisionObjectId":null,"parent":{"name":"Player","path":"objects/Player/Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":51,"eventType":6,"collisionObjectId":null,"parent":{"name":"Player","path":"objects/Player/Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
     {"varType":0,"value":"4","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"v_acc","tags":[],"resourceType":"GMObjectProperty",},
